@@ -1,0 +1,1 @@
+Compile with make. Static library file will be generated to lib.
