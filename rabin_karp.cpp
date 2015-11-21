@@ -31,9 +31,8 @@ vector<int> rabin_karp(string& p, string& s){
     return occurrences;
 }
  
-int main(){
+static void example_usage(){
     string s = "ababbaabbaababaaababa";
     string p = "aba";
     for(auto x : rabin_karp(p,s)) cout << x << " "; cout << endl;
-    return 0;
 }

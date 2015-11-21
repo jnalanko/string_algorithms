@@ -21,7 +21,7 @@ vector<int> get_border_array(string& P){
    
 }
  
-vector<int> kmp(string P, string S){
+vector<int> kmp(string& P, string& S){
     auto B = get_border_array(P);
     int length = 0;
     vector<int> occurrences;
@@ -36,8 +36,8 @@ vector<int> kmp(string P, string S){
     return occurrences;
 }
  
-int main(){
+static void example_usage(){
     string s = "ababbaabbaababaaababa";
-    for(auto i : kmp("aba",s)) cout << i << " "; cout << endl;
-    return 0;
+    string p = "aba";
+    for(auto i : kmp(p,s)) cout << i << " "; cout << endl;
 }

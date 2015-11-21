@@ -8,7 +8,7 @@ using namespace std;
  
 typedef long long LL;
 
-vector<int> get_suffix_array(string s){
+vector<int> get_suffix_array(string& s){
     int n = s.size();
     vector<int> v(n);
     for(int i = 0; i < n; i++) v[i] = (int) s[i];
@@ -29,10 +29,9 @@ vector<int> get_suffix_array(string s){
     return SA;
 }
 
-int main(){
+static void example_usage(){
     string s = "ababbaabbaababaaababa";
     cout << s << endl;
     for(auto x : get_suffix_array(s)) cout << x << " "; cout << endl;
     for(auto x : get_suffix_array(s)) cout << s.substr(x) << endl;
-    return 0;
 }
