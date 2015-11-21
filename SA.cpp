@@ -12,10 +12,10 @@ vector<int> get_suffix_array(string s){
     int n = s.size();
     vector<int> v(n);
     for(int i = 0; i < n; i++) v[i] = (int) s[i];
-    for(int L = 2; L <= n; L *= 2){
+    for(int L = 1; L <= n; L *= 2){
         vector<pair<pair<int,int>, int> > pairs(n);
         for(int i = 0; i < n; i++){
-            pairs[i] = {{v[i], (i + L/2 < n) ? v[i+L/2] : -1}, i};
+            pairs[i] = {{v[i], (i + L < n) ? v[i+L] : -1}, i};
         }
         sort(pairs.begin(), pairs.end());
         int rank = 0;
