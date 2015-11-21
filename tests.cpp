@@ -31,14 +31,6 @@ vector<int> naive_pattern_matching(string& p, string& s){
     return positions;
 }
 
-string get_random_string(vector<char>& alphabet, int length){
-    string s;
-    for(int i = 0; i < length; i++){
-        s += alphabet[rand()%alphabet.size()];
-    }
-    return s;
-}
-
 vector<string> all_binary_substrings_up_to(int k){
     vector<string> ans;
     for(int length = 1; length <= k; length++){
@@ -56,7 +48,7 @@ vector<string> all_binary_substrings_up_to(int k){
 
 int main(int argc, char** argv){
     srand(time(0));
-    // Test all binary strings with length <= maxlength
+    
     int SA_max = 16;
     for(string s : all_binary_substrings_up_to(SA_max)) 
         assert(suffix_array_naive(s) == get_suffix_array(s));
